@@ -17,6 +17,7 @@ public class BodyBox : MonoBehaviour
         if (col.gameObject.tag == "Coin")
         {
             CoinCount.Increment();
+            SCORE.Increment();
             Destroy(col.gameObject);
         }
         
