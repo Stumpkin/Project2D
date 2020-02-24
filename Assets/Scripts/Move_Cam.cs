@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Move_Cam : MonoBehaviour
 {
-    public float speed = .25f;
-    Vector3 move2D;
+
+    public Transform Target2D;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,8 +15,6 @@ public class Move_Cam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        move2D = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f);
-        transform.Translate(move2D);
-
+        transform.position = new Vector3(Target2D.position.x + 2.5f, Target2D.position.y + 3, transform.position.z);
     }
 }

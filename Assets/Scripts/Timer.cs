@@ -6,8 +6,8 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     private TextMeshProUGUI clock;
-    private float intal = 400f;
-    private float remain = 0f;
+    public float intal = 100f;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +18,18 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
         intal -= 1 * Time.deltaTime;
         int con = (int)intal;
-        clock.text = con.ToString();
 
+        if (con <= 0)
+        {
+            Controller.Gameover();
+            con = 0;
+        }
+
+        clock.text = con.ToString();
+        
 
     }
 }
